@@ -1,0 +1,70 @@
+import React, {forwardRef} from 'react'
+import {Box,Flex,Image} from "@chakra-ui/react";
+
+const Message = forwardRef(({message,username,image,email},ref)=> {
+
+    function isURL(input) {
+        const pattern = new RegExp(
+          "^(https?:\\/\\/)?" + // protocol
+            "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // domain name
+            "((\\d{1,3}\\.){3}\\d{1,3}))" + // OR ip (v4) address
+            "(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*" + // port and path
+            "(\\?[;&a-z\\d%_.~+=-]*)?" + // query string
+            "(\\#[-a-z\\d_]*)?$",
+          "i"
+        ); // fragment locator
+        return !!pattern.test(input);
+      }
+
+      function containshttp(input){
+
+        if(input.startsWith("http:/")){
+            return true;
+        }
+            
+        else if ((input.startsWith("https:/"))){
+
+            return true;
+        }
+        else return false;
+
+            
+      }
+    
+      console.log(containshttp(message.message));
+    const isUser = username === message.username;
+    return (
+
+        <Box padding={["0 20px","0 20px","0 100px","0 200px"]}>
+          
+          
+        
+        <Flex ref={ref}
+        w="fit-content"
+        maxWidth="70%"
+        justifyContent="center"
+        alignItems="center"
+        borderRadius="lg"
+        flexDirection="column" 
+        overflow="hidden" 
+        padding="8px"
+        marginTop="10px" 
+        marginBottom="10px" 
+        marginLeft={[isUser ?"auto":"0", isUser? "auto":"0px", isUser? "auto":"0",isUser? "auto":"0"]}
+        marginRight={[isUser ?"0":"0", isUser? "0":"0", isUser? "0":"0",isUser? "0":"0"]}
+        bg={isUser ? "#3f83f8" : "darkgray"} 
+        color="white" 
+        fontWeight="bold">
+          <Flex fontSize="14px" fontWeight="bold" color="black" alignItems="center">
+            <Image src={message.image} w="30px" marginRight="10px" borderRadius="50%"/>
+            {message.username}:
+          </Flex>
+           {isURL(message.message)? <p><a href={containshttp(message.message)?(message.message):("http://"+message.message)}>{message.message}</a></p> : <p>{message.message}</p>}
+        </Flex>
+      
+        </Box>
+
+    )
+})
+
+export default Message
