@@ -2,14 +2,13 @@ import firebase from "firebase";
 
 const firebaseApp = !firebase.apps.length
   ? firebase.initializeApp({
-      apiKey: "AIzaSyAkefxFSCwdsFy3YnHaP2eyo8UCDyZtLs4",
-      authDomain: "chat-app-prototype-48ece.firebaseapp.com",
-      databaseURL:
-        "https://chat-app-prototype-48ece-default-rtdb.firebaseio.com",
-      projectId: "chat-app-prototype-48ece",
-      storageBucket: "chat-app-prototype-48ece.appspot.com",
-      messagingSenderId: "167830417157",
-      appId: "1:167830417157:web:ef3a91b184f746581cd16c",
+      apiKey: "AIzaSyA030lyJlZWG6c9u-dZ2gS698DW-leAJUY",
+  authDomain: "calendar-2b49d.firebaseapp.com",
+  projectId: "calendar-2b49d",
+  storageBucket: "calendar-2b49d.appspot.com",
+  messagingSenderId: "433616905262",
+  appId: "1:433616905262:web:d45421dc9556d2a7396bbf"
+
     })
   : firebase.app();
 
