@@ -2,12 +2,12 @@ import firebase from "firebase";
 
 const firebaseApp = !firebase.apps.length
   ? firebase.initializeApp({
-      apiKey: "AIzaSyA030lyJlZWG6c9u-dZ2gS698DW-leAJUY",
-  authDomain: "calendar-2b49d.firebaseapp.com",
-  projectId: "calendar-2b49d",
-  storageBucket: "calendar-2b49d.appspot.com",
-  messagingSenderId: "433616905262",
-  appId: "1:433616905262:web:d45421dc9556d2a7396bbf"
+  apiKey: "AIzaSyBgqUxQ792Ykt7H03V3MkVzL58Dyon0BIs",
+  authDomain: "newfirebaseforchatapp.firebaseapp.com",
+  projectId: "newfirebaseforchatapp",
+  storageBucket: "newfirebaseforchatapp.appspot.com",
+  messagingSenderId: "125341023727",
+  appId: "1:125341023727:web:a9dc308e1d09f690ecca1a"
 
     })
   : firebase.app();
